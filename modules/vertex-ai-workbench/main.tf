@@ -57,6 +57,7 @@ resource "google_notebooks_instance" "tbd_notebook" {
   network             = var.network
   subnet              = var.subnet
   instance_owners     = [var.ai_notebook_instance_owner]
+  no_public_ip        = true
   post_startup_script = "gs://${google_storage_bucket_object.post-startup.bucket}/${google_storage_bucket_object.post-startup.name}"
 }
 
